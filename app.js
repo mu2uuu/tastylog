@@ -65,12 +65,25 @@ app.use("/", (() => {
   router.use("/account", require("./routes/account.js"));
   router.use("/search", require("./routes/search.js"));
   router.use("/shops", require("./routes/shops.js"));
+  router.use("/test", (req, res) => {
+    throw new Error("test error");
+  });
   router.use("/", require("./routes/index.js"));
   return router;
 })());
 
 // Set application log
 app.use(applicationlogger());
+
+// Custom Error page
+app.use((req, res, next) => {
+  res.status(404);
+  res.render("./404.ejs");
+});
+app.use((err, req, res, next) => {
+  res.status(500);
+  res.render("./500.ejs");
+});
 
 // Execute web application
 app.listen(appconfig.PORT, () => {
