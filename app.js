@@ -1,6 +1,6 @@
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
-const appconfig = require("./config/application.config");
-const dbconfig = require("./config/mysql.config");
+const appconfig = require("./config/application.config.js");
+const dbconfig = require("./config/mysql.config.js");
 const path = require("path");
 const logger = require("./lib/log/logger.js");
 const accesslogger = require("./lib/log/accesslogger.js");
@@ -47,7 +47,7 @@ app.use(session({
   },
   secret: appconfig.security.SESSION_SECREST,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   name: "sid"
 }));
 app.use(express.urlencoded({ extended: true }));
