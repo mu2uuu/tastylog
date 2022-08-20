@@ -857,6 +857,13 @@ http-errors@2.0.0:
     statuses "2.0.1"
     toidentifier "1.0.1"
 
+http-graceful-shutdown@^3.1.2:
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/http-graceful-shutdown/-/http-graceful-shutdown-3.1.8.tgz#b25514f93b9f2ad9721001b4d66ec9983e54f726"
+  integrity sha512-u1vwhYLrpT2I52poqm04KnKyvUfpRk93BIoWSizZkDJQ2oBAjsYFG8TPlsEkamTOkIVheIYuGeOL1OpzXYUxlA==
+  dependencies:
+    debug "^4.3.4"
+
 https-proxy-agent@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-5.0.1.tgz#c59ef224a04fe8b754f3db0063a25ea30d0005d6"
